@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.css';
 import "bootstrap/dist/css/bootstrap.min.css"
 import "bootstrap/dist/js/bootstrap.bundle"
@@ -6,7 +6,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from './Components/Home/Home';
 import Products from './Components/Products/Products';
 import Cart from './Components/Cart/Cart';
-import { useEffect, useState } from 'react';
 import axios from 'axios';
 import Viewproduct from './Components/Home/Viewproduct';
 import { env } from './config';
