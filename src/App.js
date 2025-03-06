@@ -16,8 +16,6 @@ import Activate from './Components/Auth/AccActivate/Activate';
 import Update from './Components/Auth/Update/Update';
 import Login from './Components/Auth/Login/Login';
 
-
-
 function App() {
 
   //Alert function;
@@ -52,15 +50,15 @@ function App() {
       setLoading(false)
     } catch (error) {
       console.log(error)
+      setLoading(false)
     }
-
   }
+
   const [cart, setCart] = useState(0);
   const [value, setValues] = useState([]);
   const [total, setTotal] = useState(0);
 
   const handleIncrement = (ele, idx) => {
-
     const incre = value.map((obj, index) => {
       if (index === idx) {
         const inc = { ...obj, count: obj.count + 1 }
@@ -71,8 +69,8 @@ function App() {
     })
     setValues(incre)
   }
-  const handleDecrement = (ele, idx) => {
 
+  const handleDecrement = (ele, idx) => {
     const dec = value.map((obj, index) => {
       if (index === idx) {
         const dec = { ...obj, count: obj.count - 1 }
@@ -86,18 +84,16 @@ function App() {
 
   const addToCart = (item) => {
     setCart(cart + 1)
-    Toast.fire({ icon: 'success', title: 'Item add your cart' })
+    Toast.fire({ icon: 'success', title: 'Item added to your cart' })
     setValues([...value, item])
     setTotal(total + item.price)
   }
+
   const removeFromCart = (ele) => {
     if (cart > 0) {
-
-
-      alert("Are you sure want to remove item")
+      alert("Are you sure you want to remove the item?")
       setCart(cart - 1)
       let index = value.findIndex((obj) => obj._id === ele._id);
-      console.log(ele.price)
       value.splice(index, 1);
       setValues([...value]);
       setTotal(total - ele.price);
