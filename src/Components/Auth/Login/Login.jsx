@@ -4,7 +4,6 @@ import { useFormik } from 'formik';
 import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import { env } from '../../../config';
-
 function Login() {
     let navigation = useNavigate();
 

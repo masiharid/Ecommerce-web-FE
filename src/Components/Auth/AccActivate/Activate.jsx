@@ -2,7 +2,7 @@ import axios from 'axios';
 import { useFormik } from 'formik';
 import React from 'react'
 import { useParams } from 'react-router-dom';
-import {env} from '../../../config'
+import { env } from '../../../config';
 import { useNavigate } from "react-router-dom";
 import Swal from 'sweetalert2';
 
